@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DEMIS - Testes com Python e Django</title>
+</head>
+<body>
+    <h4> Bem Vindo!</h4>
+    <h5>LISTAGEM - TESTES</h5>
+     <ul>
+    {% for trans in transacoes %}
+
+            <li>
+                <a href="{% url 'url_update' trans.id %}">
+                {{ trans.descricao }} - {{trans.data}} - {{trans.valor}} - {{trans.categoria}}
+                </a>
+            </li>
+    {% endfor %}
+     </ul>
+
+    <a href="{% url 'url_nova'%}">Novo</a>
+
+</body>
+</html>
